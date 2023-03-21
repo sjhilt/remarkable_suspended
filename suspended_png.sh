@@ -20,7 +20,7 @@ case $result in
     /home/root/bin/djaas
     ;;
   *)
-    cp /home/root/suspended.png.bak /home/root/bin/suspended.png
+    cp /home/root/bin/suspended.png.bak /home/root/bin/suspended.png
     ;;
 esac
 
