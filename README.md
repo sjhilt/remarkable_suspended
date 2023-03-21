@@ -1,6 +1,10 @@
 # remarkable_suspended
 Suspended Screen Update for Remarkable2
-# Instructions
+
+# Auto Install
+./install.sh
+
+# Manual Install
 
 mkdir /home/root/bin
 
