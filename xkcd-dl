@@ -1,2 +1,2 @@
 result=`curl -s https://xkcd.com/info.0.json | sed -e 's/[{}]/''/g' | awk -v RS=',' -F: '{print $1 $2 $3}' | grep img | cut -d" " -f 3 | sed 's/\"//g' | sed 's/https/https:/'`
-wget --no-check-certificate -O suspended "$result
+wget -q --no-check-certificate -O suspended "$result
