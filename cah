@@ -1,4 +1,4 @@
 #!/bin/bash
-#image result is a gif, so this won't work need to convert it to jpg or gif. 
+#image result is a gif, so this won't work need to convert it to jpg or png. 
 result=`curl -s -L https://www.gocomics.com/random/calvinandhobbes |grep "og:image" | grep assets| egrep -o 'https?://[^ ]+' | sed 's/\"//'`
 wget -q --no-check-certificate -O suspended "$result"
