@@ -1,6 +1,6 @@
 #!/bin/bash
-result=`grep -m1 -ao '[0-4]' /dev/urandom | head -n 1`
-
+result=`grep -m1 -ao '[0-9]' /dev/urandom | head -n 1`
+today=`date +'%e'`
 cd /home/root/bin
 
 case $result in
@@ -14,13 +14,25 @@ case $result in
     wget -q --no-check-certificate -O suspended https://picsum.photos/800/1200.jpg?grayscale
     ;;
   3)
-    wget -q --no-check-certificate -O suspended https://loremflickr.com/g/800/1200/HACKERS
+    wget -q --no-check-certificate -O suspended https://loremflickr.com/g/1404/1872/HACKERS
     ;;
   4)
     /home/root/bin/djaas
     ;;
+  5)
+    wget -q --no-check-certificate -O suspended https://source.unsplash.com/random/1404x1872?query=HACKERS&orientation=LANDSCAPE
+    ;;
+  6)
+    wget -q --no-check-certificate -O suspended https://cdn.freedomforum.org/dfp/jpg$today/lg/SWE_EX.jpg
+    ;;
+  7)
+    wget -q --no-check-certificate -O suspende https://cdn.freedomforum.org/dfp/jpg$today/lg/DC_WP.jpg
+    ;;
+  8)
+    wget -q --no-check-certificate -O suspended https://cdn.freedomforum.org/dfp/jpg$today/lg/CA_SFC.jpg
+    ;;
   *)
-    cp /home/root/bin/suspended.png.bak /home/root/bin/suspended.png
+    cp /home/root/suspended.png.bak /home/root/bin/suspended
     ;;
 esac
 
