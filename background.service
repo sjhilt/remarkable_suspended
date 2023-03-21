@@ -1,0 +1,10 @@
+                                         
+[Unit]
+Description=Change the Background every hour from NYT
+
+[Service]
+ExecStart=/bin/bash /home/root/bin/suspended_png.sh
+
+[Install]
+WantedBy=multi-user.target
+
