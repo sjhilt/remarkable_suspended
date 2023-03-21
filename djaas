@@ -1,0 +1,2 @@
+result=`curl -H "Accept: application/json" -s https://icanhazdadjoke.com/ | sed -e 's/[{}]/''/g' | awk -v RS=',' -F: '{print $1 $2 $3}' | grep id | cut -d" " -f 3 | cut -d"\"" -f4`
+wget --no-check-certificate -O suspended "https://icanhazdadjoke.com/j/$result\.png"
