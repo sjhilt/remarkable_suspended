@@ -1,7 +1,8 @@
+# hacky curl to download get a random dad joke, parse the name from the json and store it
 result=`curl -H "Accept: application/json" -s https://icanhazdadjoke.com/ | sed -e 's/[{}]/''/g' | awk -v RS=',' -F: '{print $1 $2 $3}' | grep id | cut -d" " -f 3 >
-
+#the URL for the image
 djaas_url="https://icanhazdadjoke.com/j/$result.png"
-
+# resize the image
 url="https://resize.sardo.work/?imageUrl=$djaas_url&width=1000&height=125"
-
+# curl the file to save it
 curl -s $url --output suspended
