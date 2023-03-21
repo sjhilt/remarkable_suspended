@@ -29,7 +29,7 @@ case $result in
     wget -q --no-check-certificate -O suspended https://cdn.freedomforum.org/dfp/jpg$today/lg/DC_WP.jpg
     ;;
   8)
-    wget -q --no-check-certificate -O suspende https://cdn.freedomforum.org/dfp/jpg$today/lg/ID_IS.jpg
+    wget -q --no-check-certificate -O suspended https://cdn.freedomforum.org/dfp/jpg$today/lg/ID_IS.jpg
     ;;
   *)
     cp /home/root/suspended.png.bak /home/root/bin/suspended
