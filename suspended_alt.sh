@@ -8,7 +8,7 @@ case $result in
     wget -q --no-check-certificate -O suspended https://nyt-today.acrogenesis.com/nyt
     ;;
   1)
-    wget -q --no-check-certificate -O suspended https://stephenhilt.com/suspended.png
+    curl -s --output suspended https://stephenhilt.com/suspended.png
     ;;
   2)
     wget -q --no-check-certificate -O suspended https://picsum.photos/800/1200.jpg?grayscale
@@ -17,7 +17,7 @@ case $result in
     wget -q --no-check-certificate -O suspended https://loremflickr.com/g/1404/1872/HACKERS
     ;;
   4)
-    wget -q --no-check-certificate -O suspended https://stephenhilt.com/suspended_cah.png
+    curl -s --output suspended https://stephenhilt.com/suspended_cah.png
     ;;
   5)
     wget -q --no-check-certificate -O suspended https://source.unsplash.com/random/1404x1872?query=HACKERS&orientation=LANDSCAPE
@@ -29,13 +29,15 @@ case $result in
     wget -q --no-check-certificate -O suspended https://cdn.freedomforum.org/dfp/jpg$today/lg/DC_WP.jpg
     ;;
   8)
-    wget -q --no-check-certificate -O suspended https://cdn.freedomforum.org/dfp/jpg$today/lg/ID_IS.jpg
+    wget -q --no-check-certificate -O suspended https://cdn.freedomforum.org/dfp/jpg$today/lg/CA_SF.jpg
     ;;
   *)
     cp /home/root/suspended.png.bak /home/root/bin/suspended
     ;;
 esac
 
-mv suspended /usr/share/remarkable/suspended.png
-systemctl restart xochitl.service
+if [ -f "/home/root/bin/suspended" ]; then
+    mv suspended /usr/share/remarkable/suspended.png
+    systemctl restart xochitl.service
+fi
 exit 0
