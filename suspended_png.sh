@@ -25,4 +25,6 @@ case $result in
 esac
 
 mv suspended /usr/share/remarkable/suspended.png
+# Manually Reboot the device, or run
+#systemctl restart xochitl.service
 exit 0
