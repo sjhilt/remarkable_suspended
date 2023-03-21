@@ -2,7 +2,7 @@
 Description=Run Background Update Every Hour
 
 [Timer]
-OnCalendar=hourly
+OnCalendar=*-*-* 08:00:00
 Persistent=true
 
 [Install]
